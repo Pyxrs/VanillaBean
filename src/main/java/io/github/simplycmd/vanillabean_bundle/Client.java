@@ -1,4 +1,4 @@
-package io.github.simplycmd.vanillabean;
+package io.github.simplycmd.vanillabean_bundle;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;

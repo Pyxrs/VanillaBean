@@ -1,6 +1,6 @@
-package io.github.simplycmd.vanillabean.mixin;
+package io.github.simplycmd.vanillabean_bundle.mixin;
 
-import io.github.simplycmd.vanillabean.Client;
+import io.github.simplycmd.vanillabean_bundle.Client;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
@@ -13,14 +13,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Environment(EnvType.CLIENT)
 @Mixin(GameRenderer.class)
 public class GameRendererMixin {
+    boolean zoomLastTick = false;
+
     @Inject(method = "getFov", at = @At("HEAD"), cancellable = true)
     public void getZoomLevel(CallbackInfoReturnable<Double> cir) {
-        while (Client.zoomKey.wasPressed()) {
+        if (Client.zoomKey.wasPressed()) {
             cir.setReturnValue(19.0);
             MinecraftClient.getInstance().options.smoothCameraEnabled = true;
-        }
-        while (!Client.zoomKey.wasPressed()) {
-            MinecraftClient.getInstance().options.smoothCameraEnabled = false;
+            zoomLastTick = true;
+        } else {
+            if (zoomLastTick) {
+                MinecraftClient.getInstance().options.smoothCameraEnabled = false;
+                zoomLastTick = false;
+            }
         }
     }
 }

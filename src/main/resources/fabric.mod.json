@@ -19,10 +19,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.simplycmd.vanillabean.Main"
+      "io.github.simplycmd.vanillabean_bundle.Main"
     ],
     "client": [
-      "io.github.simplycmd.vanillabean.Client"
+      "io.github.simplycmd.vanillabean_bundle.Client"
     ]
   },
   "mixins": [
