@@ -1,32 +1,32 @@
 {
   "schemaVersion": 1,
-  "id": "vanillabean_bundle",
+  "id": "vanillabean",
   "version": "${version}",
 
-  "name": "VanillaBean Bundle",
-  "description": "VanillaBean is a mod that focuses on adding numerous little tweaks to make Minecraft better while remaining vanilla.",
+  "name": "VanillaBean",
+  "description": "VanillaBean is a mod that focuses on rebalancing Minecraft to add extra challenge in an alpha-like manner without sacrificing modern updates.",
   "authors": [
     "SimplyCmd"
   ],
   "contact": {
-    "homepage": "https://simplycmd.github.io/vanillabean_bundle",
-    "sources": "https://github.com/SimplyCmd/VanillaBean-Bundle"
+    "homepage": "https://simplycmd.github.io/vanillabean",
+    "sources": "https://github.com/SimplyCmd/VanillaBean"
   },
 
   "license": "MIT",
-  "icon": "assets/vanillabean_bundle/icon.png",
+  "icon": "assets/vanillabean/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.simplycmd.vanillabean_bundle.Main"
+      "io.github.simplycmd.vanillabean.Main"
     ],
     "client": [
-      "io.github.simplycmd.vanillabean_bundle.Client"
+      "io.github.simplycmd.vanillabean.Client"
     ]
   },
   "mixins": [
-    "vanillabean_bundle.mixins.json"
+    "vanillabean.mixins.json"
   ],
 
   "depends": {
