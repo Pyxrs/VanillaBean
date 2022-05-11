@@ -7,7 +7,12 @@
     "defaultRequire": 1
   },
   "mixins": [
+    "CreeperEntityMixin",
+    "FoodComponentMixin",
+    "HungerManagerMixin",
+    "InGameHudMixin",
     "ItemMixin",
+    "PhantomEntityMixin",
     "ServerChunkManagerMixin"
   ]
 }
